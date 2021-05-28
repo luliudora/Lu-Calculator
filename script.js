@@ -29,6 +29,11 @@ function result() {
     return;
   }
 
+  if(principal =="0"){
+    alert("Enter a positive number");
+    return;
+  }
+
   document.getElementById("result").innerHTML =
     "If you Deposit <span class=\"yellow\">" +
     principal +
