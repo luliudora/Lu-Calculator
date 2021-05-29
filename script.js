@@ -9,7 +9,7 @@ function compute() {
 
 function updateRate() {
   var rateval = document.getElementById("rate").value;
-  document.getElementById("rate_val").innerText = rateval;
+  document.getElementById("rate_val").innerText = rateval+"%";
 }
 
 function result() { 
@@ -24,16 +24,21 @@ function result() {
     return;
   }
 
- if(principal == "0"&& rate == "1"&& years =="1"){
+  if(principal == "0"&& rate == "1"&& years =="1"){
     alert("Enter a positive number");
     return;
   }
-
+  
   if(principal =="0"){
     alert("Enter a positive number");
     return;
   }
-
+  
+  if(principal < "0"){
+     alert("Enter a positive number");
+    return;
+  }
+  
   document.getElementById("result").innerHTML =
     "If you Deposit <span class=\"yellow\">" +
     principal +
@@ -45,7 +50,6 @@ function result() {
     year +
     "</span><br>";
   
-
   document.getElementById("years").value="";
   document.getElementById("rate").value="";
   document.getElementById("principal").value="";
